@@ -1,0 +1,41 @@
+:root {
+  color-scheme: light dark;
+  --page: #f2f5f9;
+  --surface: #fff;
+  --ink: #122339;
+  --muted: #40546b;
+  --line: #d2dce8;
+  --accent: #1056a0;
+  --focus: #ad4406;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: var(--page);
+  color: var(--ink);
+  font: 1rem/1.75 system-ui, -apple-system, sans-serif;
+}
+.wrap { width: min(54rem, calc(100% - 2rem)); margin-inline: auto; }
+.site-header { border-block-end: 1px solid var(--line); background: var(--surface); }
+.site-header .wrap, nav { display: flex; flex-wrap: wrap; align-items: center; gap: .5rem 1.25rem; }
+.site-header .wrap { justify-content: space-between; padding-block: .65rem; }
+.brand { color: var(--ink); font-weight: 750; }
+nav a, summary { padding-block: .42rem; }
+a { color: var(--accent); text-underline-offset: .2em; overflow-wrap: anywhere; }
+a[aria-current="page"] { font-weight: 750; text-decoration-thickness: .15em; }
+a:focus-visible, summary:focus-visible { outline: 3px solid var(--focus); outline-offset: .18rem; }
+main { padding-block: clamp(1.4rem, 6vw, 4rem) 4rem; }
+.intro { margin-block-end: 1.4rem; }
+h1 { margin: 0 0 .9rem; font-size: clamp(2rem, 5.5vw, 3.4rem); line-height: 1.2; overflow-wrap: anywhere; }
+h2 { margin: 0 0 .35rem; font-size: 1.22rem; line-height: 1.4; }
+p { margin: 0; max-inline-size: 72ch; color: var(--muted); }
+article, main > section { border: 1px solid var(--line); border-radius: 1rem; padding: 0 clamp(1rem, 4vw, 2rem); background: var(--surface); }
+article section, main > section { padding-block: 1.35rem; }
+article section + section { border-block-start: 1px solid var(--line); }
+summary { min-block-size: 2.75rem; color: var(--accent); cursor: pointer; font-weight: 650; }
+.language-list { list-style: none; margin: .5rem 0 1rem; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(10.5rem, 100%), 1fr)); gap: .3rem .8rem; }
+.language-list a { display: block; padding: .3rem .25rem; }
+.actions a { display: block; padding: .65rem .85rem; background: var(--surface); border: 1px solid var(--line); border-radius: .65rem; }
+@media (prefers-color-scheme: dark) {
+  :root { --page: #111925; --surface: #1a2636; --ink: #f0f5ff; --muted: #cedaec; --line: #3d4e63; --accent: #9cc7ff; --focus: #ffb186; }
+}
